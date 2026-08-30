@@ -1,0 +1,3 @@
+# Salida de exportaciones locales (export_path apunta a ../builds/)
+builds/*
+!builds/.gitkeep
