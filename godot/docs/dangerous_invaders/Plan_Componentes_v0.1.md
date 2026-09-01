@@ -25,9 +25,9 @@ Identificar los componentes del juego como unidades de diseño y desarrollo inde
 
 | # | Componente | Estado | Prioridad | Documento |
 |---|-----------|--------|-----------|-----------|
-| 1 | Piloto (personaje) | 🟡 | P1 | pendiente |
-| 2 | Nave (interior y layout) | 🟡 | P1 | pendiente |
-| 3 | Estaciones / comandos | 🟡 | P1 | pendiente |
+| 1 | Piloto (personaje) | 🟡 | P1 | [01_piloto.md](componentes/01_piloto.md) |
+| 2 | Nave (interior y layout) | 🟡 | P1 | [02_nave.md](componentes/02_nave.md) |
+| 3 | Estaciones / comandos | 🟡 | P1 | [03_estaciones.md](componentes/03_estaciones.md) |
 | 4 | Sistema de energía | 🟡 | P1 | pendiente |
 | 5 | Movimiento de la nave | 🟡 | P1 | pendiente |
 | 6 | Ataque ligero (automático) | 🟢 | P1 | pendiente |
