@@ -36,7 +36,7 @@ Identificar los componentes del juego como unidades de diseño y desarrollo inde
 | 9 | Loop de combate (victoria/derrota) | 🔴 | P1 | pendiente |
 | 10 | Ataque pesado (manual) | 🟡 | P2 | pendiente |
 | 11 | Pantalla / HUD / feedback | 🟡 | P2 | pendiente |
-| 12 | Fase de exploración / plataformas | 🟡 | P3 | pendiente |
+| 12 | Fase de exploración / plataformas | 🟡 | P3 | [12_exploracion.md](componentes/12_exploracion.md) |
 | 13 | Conexión entre fases / progresión | 🔴 | P3 | pendiente |
 | 14 | Sectores / estructura de partida | 🔴 | P3 | pendiente |
 | 15 | Multijugador (2 naves) | 🟡 | P3 | pendiente |
@@ -147,6 +147,7 @@ Segmentos a pie entre combates: plataformas, exploración, disparo ligero. Cambi
 
 - **Responsabilidades:** controller de plataformas, niveles explorables, obstáculos y combate ligero, objetivo/salida.
 - **Depende de:** Piloto (1) — idealmente comparte controller base; Conexión entre fases (13).
+- **Definido (2026-09-01):** el movimiento se apoya en el controller de [sci-fy-jumper](https://github.com/linkinmjs/sci-fy-jumper) (juego propio, inspirado en Jump King): caminar libre + salto cargado sin control aéreo, rebote en paredes, splat. Avance horizontal tipo Mario Bros. pero **bidireccional** (siempre se puede volver atrás), con más altura que un Mario clásico para aprovechar el salto cargado. Minimalista y relativamente simple. Detalle en [12_exploracion.md](componentes/12_exploracion.md).
 - **Referencias para enemigos de esta fase (2026-08-31):** *Zelda II: The Adventure of Link* y *Castlevania* (NES/Famicom) — mecánicas distintas a las de los enemigos espaciales, a diseñar junto con este componente.
 - **Preguntas abiertas:** cámara, estructura de niveles, enemigos terrestres. **No entra en el primer prototipo.**
 
