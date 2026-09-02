@@ -32,7 +32,7 @@ Identificar los componentes del juego como unidades de diseño y desarrollo inde
 | 5 | Movimiento de la nave | 🟡 | P1 | pendiente |
 | 6 | Ataque ligero (automático) | 🟢 | P1 | pendiente |
 | 7 | Escudo móvil | 🟢 | P1 | pendiente |
-| 8 | Enemigos / formación invasora | 🟡 | P1 | pendiente |
+| 8 | Enemigos (fase de pilotaje) | 🟡 | P1 | [08_enemigos.md](componentes/08_enemigos.md) |
 | 9 | Loop de combate (victoria/derrota) | 🔴 | P1 | pendiente |
 | 10 | Ataque pesado (manual) | 🟡 | P2 | pendiente |
 | 11 | Pantalla / HUD / feedback | 🟡 | P2 | pendiente |
@@ -105,13 +105,15 @@ Disparo sostenido que se activa desde una estación y sigue funcionando sin el p
 - **Preguntas abiertas:** ¿se rompe/regenera?, largo y velocidad base, ¿consume energía?, resolución de inputs simultáneos en coop (propuesta en [03_estaciones.md](componentes/03_estaciones.md): se suman).
 - **Guardarraíl:** las propiedades extra no deben romper el minimalismo — cada una pasa por el filtro de priorización.
 
-## 8. Enemigos / formación invasora
+## 8. Enemigos (fase de pilotaje)
 
 La amenaza exterior: formación que aparece arriba, se desplaza lateralmente, desciende y acelera. Genera la presión temporal que hace valiosa cada decisión del piloto.
 
-- **Responsabilidades:** movimiento de formación, descenso progresivo, disparos hacia la nave, escalado de presión.
-- **Depende de:** Loop de combate (9) para condiciones de fin.
-- **Preguntas abiertas:** para el prototipo alcanza un solo tipo; familias, jefes y comportamientos especiales quedan para después.
+- **Analizado (2026-08-31):** catálogo de 7 familias (formación base, oleadas coreografiadas estilo Galaga con recompensa por destrucción total, picadores, bombarderos, escuadrones laterales, blindados, transportes) + 3 arquetipos de jefe (piñata, punto débil vulnerable solo al disparo pesado, capturador). Criterio rector: cada tipo presiona una decisión/estación distinta; la dificultad escala en frentes simultáneos, nunca en velocidad. Lluvias de balas solo como eventos telegrafiados. Referencias: *Galaga*, *1943*, *B-Wings*. Detalle en [08_enemigos.md](componentes/08_enemigos.md).
+- **Responsabilidades:** movimiento de formación, oleadas, descenso progresivo, disparos hacia la nave, escalado de presión.
+- **Depende de:** Loop de combate (9) para condiciones de fin; Items (16) para las recompensas de oleadas y transportes.
+- **Prototipo:** formación base + picador; el resto por capas.
+- **Nota:** los enemigos de la fase plataformera son un diseño aparte (ver componente 12).
 
 ## 9. Loop de combate (victoria/derrota)
 
@@ -145,6 +147,7 @@ Segmentos a pie entre combates: plataformas, exploración, disparo ligero. Cambi
 
 - **Responsabilidades:** controller de plataformas, niveles explorables, obstáculos y combate ligero, objetivo/salida.
 - **Depende de:** Piloto (1) — idealmente comparte controller base; Conexión entre fases (13).
+- **Referencias para enemigos de esta fase (2026-08-31):** *Zelda II: The Adventure of Link* y *Castlevania* (NES/Famicom) — mecánicas distintas a las de los enemigos espaciales, a diseñar junto con este componente.
 - **Preguntas abiertas:** cámara, estructura de niveles, enemigos terrestres. **No entra en el primer prototipo.**
 
 ## 13. Conexión entre fases / progresión
