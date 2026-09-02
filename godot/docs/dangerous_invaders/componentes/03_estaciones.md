@@ -31,6 +31,8 @@ Todas las estaciones comparten el mismo contrato, lo que permite agregar o quita
 - `procesar_input(input)` — qué hace la estación con los inputs del piloto anclado.
 - Señales: `ocupada`, `liberada`, `sistema_activado`, `sistema_desactivado`.
 
+Interacción según el esquema de 2 botones del [Piloto](01_piloto.md): **A** ocupa (y ejecuta acciones dentro de la estación), **B** libera/cancela.
+
 ---
 
 ## Dos tipos de operación
@@ -49,7 +51,9 @@ El intercambio del GDD (§7.1) — tiempo del jugador ↔ potencia de la nave �
 
 ---
 
-## Lista mínima para el prototipo
+## Lista de estaciones (recomendación inicial)
+
+La lista y su asignación por piso son una **recomendación inicial** (aclarado 2026-08-31); pueden variar por nave (ver *Variantes* en [Nave](02_nave.md)).
 
 | Estación | Tipo | Sistema | Piso (propuesta en [Nave](02_nave.md)) |
 |----------|------|---------|------|
@@ -57,8 +61,13 @@ El intercambio del GDD (§7.1) — tiempo del jugador ↔ potencia de la nave �
 | Control de escudo | Sostenida | Reposicionar el escudo (07) | 2 (arriba, al fondo) |
 | Interruptor de ataque ligero | Conmutada | Fuego automático (06) | 2 (arriba, cerca del ascensor) |
 | Cañón pesado *(P2)* | Sostenida | Disparo manual (10) | 1 (abajo, al fondo) |
+| Recolección: imán o gancho *(P2/P3)* | A definir | Atraer/recoger items (comp. 16 del plan) | a definir |
 
-**Sin estación de energía en el prototipo.** La energía se gestiona implícitamente (cada sistema consume de un pool común). Una estación de gestión/redistribución solo se agrega si pasa el filtro del GDD: *¿mejora la decisión de priorización?* — con 3 estaciones y un pool, la priorización ya existe.
+Sobre la estación de **recolección**: el imán sugiere operación **conmutada** (se activa y atrae solo, consumiendo energía); el gancho con cuerda estilo barco pesquero sugiere operación **sostenida** (apuntar y lanzar). La elección entre ambos es también una decisión de tipo de operación — o de variante de nave (una con imán, otra con gancho).
+
+**Estaciones futuras / desbloqueables:** el modelo contempla agregar estaciones nuevas más adelante, incluso alguna que se **desbloquee durante la progresión**. El contrato común existe justamente para eso. Toda estación nueva pasa antes por el filtro del GDD: *¿mejora la decisión de priorización?*
+
+**Sin estación de energía en el prototipo.** La energía se gestiona implícitamente (cada sistema consume de un pool común). Una estación de gestión/redistribución solo se agrega si pasa el filtro — con 3 estaciones y un pool, la priorización ya existe.
 
 ---
 

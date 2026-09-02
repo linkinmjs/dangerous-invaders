@@ -40,6 +40,8 @@ Identificar los componentes del juego como unidades de diseño y desarrollo inde
 | 13 | Conexión entre fases / progresión | 🔴 | P3 | pendiente |
 | 14 | Sectores / estructura de partida | 🔴 | P3 | pendiente |
 | 15 | Multijugador (2 naves) | 🟡 | P3 | pendiente |
+| 16 | Items y recolección (imán / gancho) | 🔴 | P3 | pendiente |
+| 17 | Variantes de nave (selección) | 🟡 | P3 | pendiente |
 
 ---
 
@@ -94,11 +96,14 @@ Disparo sostenido que se activa desde una estación y sigue funcionando sin el p
 
 ## 7. Escudo móvil
 
-Defensa única y posicionable (lectura espacial tipo paleta de *Breakout*). Obliga a decidir dónde protegerse; en multijugador es compartido entre ambas naves. **Confirmado (2026-08-30):** es la **plataforma flotante de la vista exterior** del boceto, entre la formación enemiga y la nave. No se duplica en multijugador: existe una sola y **ambos jugadores pueden manipularla**.
+**Concepto aclarado (2026-08-31):** una **plataforma un poco arriba de las naves**, como los búnkeres de *Space Invaders* (que se iban rompiendo), pero **una sola y móvil lateralmente** como la paleta de *Arkanoid* — controlada desde una estación de la nave. Obliga a decidir dónde protegerse.
 
-- **Responsabilidades:** interceptar proyectiles/amenazas, ser reposicionado desde una estación, cubrir solo una porción del espacio.
-- **Depende de:** Estaciones (3); posible dependencia de Energía (4).
-- **Preguntas abiertas:** ¿bloqueo total o con desgaste?, arco de cobertura, velocidad de reposicionamiento, ¿consume energía?
+- **Responsabilidades:** interceptar proyectiles/amenazas, moverse lateralmente según la estación que lo controla, cubrir solo una porción del espacio.
+- **Ideas anotadas:** que se vaya **rompiendo** con los impactos (como los búnkeres clásicos); que cada **variante de nave le aporte una propiedad** — más largo, más resistente, que dispare automáticamente, que actúe de imán de items para facilitar la recolección (ver 16 y 17).
+- **Multijugador:** sigue siendo **un solo escudo para los 2 jugadores, con controles compartidos**.
+- **Depende de:** Estaciones (3); posible dependencia de Energía (4); Variantes de nave (17) para sus propiedades.
+- **Preguntas abiertas:** ¿se rompe/regenera?, largo y velocidad base, ¿consume energía?, resolución de inputs simultáneos en coop (propuesta en [03_estaciones.md](componentes/03_estaciones.md): se suman).
+- **Guardarraíl:** las propiedades extra no deben romper el minimalismo — cada una pasa por el filtro de priorización.
 
 ## 8. Enemigos / formación invasora
 
@@ -163,6 +168,21 @@ Cooperativo con una nave por jugador y sistemas compartidos (en particular el es
 - **Definido (2026-08-30):** cada jugador tiene su **propia nave y su propio interior**. Ambos interiores son visibles a la vez en la franja inferior ("Interior de la nave P1" / "Interior de la nave P2"), compartiendo la misma vista exterior de combate. El modo es **cooperativo local drop-in**: en single player, el panel derecho muestra "presione START para unirse". Sistemas como el escudo no se duplican: son compartidos y manipulables por ambos jugadores.
 - **Depende de:** todos los sistemas P1 funcionando en single player primero.
 - **Preguntas abiertas:** ¿además de local habrá online?, qué otros sistemas son compartidos además del escudo, ¿el drop-in se permite en medio de un combate o solo entre sectores?
+
+## 16. Items y recolección (imán / gancho)
+
+Items que aparecen en el espacio de combate y que las naves recolectan. La recolección es un sistema activo con estación propia: un **imán** que atrae items, o un **gancho con cuerda** estilo barco pesquero (a definir; pueden convivir como diferencia entre variantes de nave). El escudo también podría actuar de imán como propiedad aportada por alguna nave.
+
+- **Depende de:** Estaciones (3), Enemigos (8) como fuente probable de drops, Conexión entre fases (13) para el destino de lo recolectado.
+- **Preguntas abiertas:** qué son los items (recursos, mejoras, energía), de dónde caen, imán vs. gancho, si recolectar compite por atención con defender (debería — es lo que lo vuelve interesante).
+
+## 17. Variantes de nave (selección)
+
+Unas **3 naves elegibles** en un primer momento, con propiedades distintas que balancean el juego: imán vs. gancho, balas vs. láser en el ataque ligero, 2 ascensores o caño de bomberos central para la circulación interna, y aportes distintos al escudo compartido. El layout interno es parte de la identidad de cada nave (detalle en [02_nave.md](componentes/02_nave.md)).
+
+- **Depende de:** Nave (2), Estaciones (3), Escudo (7), Items (16).
+- **Preguntas abiertas:** las 3 variantes concretas y su balance, ¿desbloqueables o disponibles desde el inicio?
+- **Guardarraíl:** el prototipo valida con **una sola nave base**; las variantes llegan después.
 
 ---
 

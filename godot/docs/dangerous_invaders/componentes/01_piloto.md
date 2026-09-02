@@ -25,22 +25,25 @@ Su función de diseño: convertir la atención del jugador en **desplazamiento f
 
 ### Interacción con estaciones
 
-- Al estar en el área de una estación, un **botón de interacción** la ocupa.
+- Al estar en el área de una estación, el **botón A** la ocupa.
 - Mientras opera, el piloto queda **anclado**: no se desplaza y sus inputs van a la estación.
-- **Salir es instantáneo**: moverse (o presionar interacción de nuevo) libera la estación al momento. No hay animación de salida que retenga al jugador — la sensación buscada es poder *soltar todo y correr*.
+- El **botón B** libera la estación de forma **instantánea**. No hay animación de salida que retenga al jugador — la sensación buscada es poder *soltar todo y correr*.
 - Un piloto ocupa **una sola estación a la vez**.
 
 ### Daño
 
 - En el prototipo, el piloto **no tiene salud propia**: todo el daño lo recibe el casco de la nave (ver [Nave](02_nave.md)).
 
-### Controles (prototipo)
+### Controles (esquema de 2 botones, definido 2026-08-31)
 
 | Input | Acción |
 |-------|--------|
 | Stick / flechas ←→ | Moverse |
-| Botón A (interacción) | Ocupar / liberar estación · usar ascensor |
+| **Botón A** | **Entrar / acciones**: ocupar estación, usar ascensor, confirmar |
+| **Botón B** | **Salir / cancelar**: liberar estación, cancelar; posiblemente **disparar** dentro de la nave (a definir) |
 | Inputs contextuales | Definidos por la estación ocupada (ej. ←→ mueve la nave desde el timón) |
+
+El esquema general del juego es de **2 botones + dirección**, y debe mantenerse consistente entre fases.
 
 ---
 
@@ -72,6 +75,8 @@ Su función de diseño: convertir la atención del jugador en **desplazamiento f
 
 ## Preguntas abiertas
 
+- ¿El botón B también dispara dentro de la nave? Si el piloto puede disparar adentro, implica amenazas internas futuras (abordajes, sistemas dañados) — evaluar contra el filtro de minimalismo.
+- ¿Moverse mientras se opera también libera la estación, o solo el botón B?
 - ¿Conviene algún verbo extra dentro de la nave (correr/dash) o la velocidad única alcanza?
 - ¿El piloto tendrá salud propia en fases posteriores (enemigos que abordan, daño interno)?
 - Animaciones/poses al operar cada tipo de estación (cosmético, post-prototipo).

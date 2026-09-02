@@ -22,7 +22,9 @@ Consecuencia del ascensor en el extremo: la esquina inferior-derecha y la superi
 
 ---
 
-## Distribución de estaciones propuesta (prototipo)
+## Distribución de estaciones (recomendación inicial)
+
+**Tanto la lista de estaciones como su distribución son una recomendación inicial** (aclarado 2026-08-31): sirven para arrancar el prototipo y se espera que cambien — incluso por nave, ver *Variantes* más abajo.
 
 Criterio: las dos estaciones de **operación sostenida de alta frecuencia** (timón y escudo) van en **pisos distintos**, para que nunca se puedan atender ambas sin viajar.
 
@@ -38,6 +40,21 @@ Piso 1 (abajo):    [ascensor] ........ [timón/movimiento] ... [ataque pesado*]
 - **Ataque ligero** arriba pero más cerca del ascensor: activarlo es un viaje corto de ida y vuelta — inversión puntual de tiempo a cambio de fuego sostenido.
 
 Esta distribución es una **hipótesis de partida** para el prototipo; se ajusta jugando.
+
+A la lista se sumará una estación de **recolección de items** — un **imán** que los atrae o un **gancho con cuerda** estilo barco pesquero (a definir cuál; ver [Estaciones](03_estaciones.md) y componente 16 del plan).
+
+---
+
+## Variantes de nave (post-validación)
+
+Habrá **naves distintas para elegir** — unas **3 en un primer momento** — con propiedades diferentes que balanceen el juego entre sí. Ejemplos anotados (2026-08-31):
+
+- **Recolección:** una nave tiene imán, otra tiene gancho con cuerda.
+- **Ataque ligero:** una dispara balas, otra un láser.
+- **Circulación interna:** una tiene 2 ascensores en lugar de 1, u otra un **caño de bomberos** en el medio que agiliza bajar al piso inferior.
+- **Aporte al escudo:** cada nave puede aportar una propiedad al escudo compartido (ver componente 07 en el plan).
+
+Es decir: el layout interno y las estaciones **son parte de la identidad de cada nave** — la variante es la unidad de balance. El prototipo usa **una sola nave base**; las variantes se diseñan después de validar el core.
 
 ---
 
@@ -89,7 +106,8 @@ Esta distribución es una **hipótesis de partida** para el prototipo; se ajusta
 
 ## Preguntas abiertas
 
+- ¿Imán o gancho con cuerda para la recolección de items (o ambos, repartidos entre variantes)?
 - ¿El ascensor en el extremo izquierdo (boceto) o centrado? El extremo maximiza distancias; el centro las empareja.
 - ¿Habrá zonas de la nave sin estaciones con otro propósito (almacén, ventanas, entrada/salida para Fase II)?
-- ¿El layout es fijo para todo el juego o varía por nave/upgrade (post-validación)?
+- Qué propiedades exactas aporta cada variante y cómo se balancean entre sí.
 - Cómo se representa visualmente el daño en el interior.
